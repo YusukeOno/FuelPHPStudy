@@ -1,8 +1,13 @@
 FROM centos:7
 
 ENV PHP_VERSION 5.4.16
+ENV LANG ja_JP.UTF-8 \
+    LANGUAGE="ja_JP:ja" \
+    LC_ALL="ja_JP.UTF-8"
 
 RUN yum install -y \
+        glibc \
+        glibc-common \
         php \
         php-mbstring \
         php-pgsql \
@@ -11,7 +16,8 @@ RUN yum install -y \
         git \
         vim \
         httpd && \
-    yum clean all
+    yum clean all && \
+    localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
 
 RUN mkdir /app
 WORKDIR /app
