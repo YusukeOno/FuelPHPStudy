@@ -10,6 +10,9 @@
  * @link       https://fuelphp.com
  */
 
+// set default charset
+ini_set('default_charset', 'UTF-8');
+
 // Bootstrap the framework - THIS LINE NEEDS TO BE FIRST!
 require COREPATH.'bootstrap.php';
 
