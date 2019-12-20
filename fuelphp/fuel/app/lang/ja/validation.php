@@ -19,4 +19,6 @@ return array(
     'required_with' => ' field :label must contain a value if :param:1 contains a value.',
     'valid_date' => 'The field :label must contain a valid formatted date.',
 
+    // 独自ルール
+    'no_tab_and_newline' => ':label 欄にはタブや改行を含めないようにしてください。'
 );
