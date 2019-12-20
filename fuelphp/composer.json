@@ -16,7 +16,8 @@
         "fuelphp/upload": "2.0.6"
     },
     "require-dev": {
-        "fuel/docs": "1.8.*"
+        "fuel/docs": "1.8.*",
+        "phpunit/phpunit": "3.7.*"
     },
     "suggest": {
         "dwoo/dwoo" : "Allow Dwoo templating with the Parser package",
