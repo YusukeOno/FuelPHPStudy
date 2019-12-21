@@ -19,7 +19,7 @@ class myinputfilters_Test extends TestCase
 
     public function test_check_encoding_正常な文字列は検証をパスしその文字列が返る()
     {
-        $input = '正常なUTFー8の文字列です。';
+        $input = '正常なUTF-8の文字列です。';
         $test = MyInputFilters::check_encoding($input);
         $expected = $input;
 
@@ -66,7 +66,7 @@ class myinputfilters_Test extends TestCase
     {
         return array(
             array("NULL文字を含む文字列です。\0"),
-            array("NUKK文字と改行コードを含む文字列です。\0\n"),
+            array("NULL文字と改行コードを含む文字列です。\0\n"),
         );
     }
 
