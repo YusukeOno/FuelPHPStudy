@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: db
--- 生成日時: 2019 年 12 月 22 日 08:42
+-- 生成日時: 2019 年 12 月 22 日 14:12
 -- サーバのバージョン： 5.5.64-MariaDB-1~trusty
 -- PHP のバージョン: 7.4.1
 
@@ -21,16 +21,16 @@ SET time_zone = "+00:00";
 --
 -- データベース: `fuel_dev`
 --
+CREATE DATABASE IF NOT EXISTS `fuel_dev` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `fuel_dev`;
 
 -- --------------------------------------------------------
 
 --
--- テーブルの構造 `form`
+-- テーブルの構造 `cf_form`
 --
 
-use fuel_dev;
-
-CREATE TABLE `form` (
+CREATE TABLE `cf_form` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -41,14 +41,33 @@ CREATE TABLE `form` (
   `updated_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `cf_migration`
+--
+
+CREATE TABLE `cf_migration` (
+  `type` varchar(25) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `migration` varchar(100) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `cf_migration`
+--
+
+INSERT INTO `cf_migration` (`type`, `name`, `migration`) VALUES
+('app', 'default', '001_create_form');
+
 --
 -- ダンプしたテーブルのインデックス
 --
 
 --
--- テーブルのインデックス `form`
+-- テーブルのインデックス `cf_form`
 --
-ALTER TABLE `form`
+ALTER TABLE `cf_form`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -56,9 +75,9 @@ ALTER TABLE `form`
 --
 
 --
--- テーブルのAUTO_INCREMENT `form`
+-- テーブルのAUTO_INCREMENT `cf_form`
 --
-ALTER TABLE `form`
+ALTER TABLE `cf_form`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
