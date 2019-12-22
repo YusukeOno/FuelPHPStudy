@@ -256,7 +256,10 @@ return array(
 
 		'uri_filter' => array('htmlentities'),
 
-		// 'input_filter' => array(),
+		'input_filter' => array(
+			'MyInputFilters::check_encoding',
+			'MyInputFilters::check_control',
+		),
 
 		/**
 		 * ---------------------------------------------------------------------
