@@ -19,7 +19,7 @@ class model_mail_Test extends TestCase
     public function test_メール送信するとmail関数が呼ばれる()
     {
         // mail()関数からのデータをリセットしておく
-        Config::set('_test.mail.data', array());
+        Config::set('_tests.mail.data', array());
 
         $mail = new Model_Mail();
         $mail->send($this->post);
