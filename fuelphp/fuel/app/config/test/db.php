@@ -25,7 +25,9 @@
 return array(
     'default' => array(
         'connection' => array(
-            'dsn'       => 'mysql:host=db;dbname=fuel_test;charset=utf8',
+            'hostname'  => 'db',
+            'port'      => '3306',
+            'database'  => 'fuel_test',
             'username'  => 'username',
             'password'  => 'password',
         ),

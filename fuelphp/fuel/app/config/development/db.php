@@ -22,7 +22,9 @@
 return array(
 	'default' => array(
 		'connection' => array(
-			'dsn'      => 'mysql:host=db;dbname=fuel_dev;charset=utf8',
+			'hostname' => 'db',
+			'post'     => '3306',
+			'database' => 'fuel_dev',
 			'username' => 'username',
 			'password' => 'password',
 		),
