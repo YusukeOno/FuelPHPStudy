@@ -4,38 +4,49 @@ class Controller_Form extends Controller_Public
 {
     public function action_index()
     {
+        $form = $this->forge_form();
+
+        if (Input::method() === 'POST')
+        {
+            $form->repopulate();
+        }
         $this->template->title = 'コンタクトフォーム';
         $this->template->content = View::forge('form/index');
+        $this->template->content->set_safe('html_form', $form->build('form/confirm'));
     }
 
-    // 検証ルールの定義
-    public function forge_validation()
+    // フォームの定義
+    public function forge_form()
     {
-        $val = Validation::forge();
+        $form = Fieldset::forge();
 
-        $val->add('name', '名前')
+        $form->add('name', '名前')
             ->add_rule('trim')
             ->add_rule('required')
             ->add_rule('no_tab_and_newline')
             ->add_rule('max_length', 50);
 
-        $val->add('email', 'メールアドレス')
+        $form->add('email', 'メールアドレス')
             ->add_rule('trim')
             ->add_rule('required')
             ->add_rule('no_tab_and_newline')
             ->add_rule('max_length', 100)
             ->add_rule('valid_email');
 
-        $val->add('comment', 'コメント')
+        $form->add('comment', 'コメント',
+                    array('type' => 'textarea', 'cols' => 70, 'rows' => 6 ))
             ->add_rule('required')
             ->add_rule('max_length', 400);
 
-        return $val;
+        $form->add('submit', '' , array('type' => 'submit', 'value' => '確認'));
+
+        return $form;
     }
 
     public function action_confirm()
     {
-        $val = $this->forge_validation()->add_callable('MyValidationRules');
+        $form = $this->forge_form();
+        $val  = $form->validation()->add_callable('MyValidationRules');
 
         if ($val->run())
         {
@@ -45,9 +56,11 @@ class Controller_Form extends Controller_Public
         }
         else
         {
+            $form->repopulate();
             $this->template->title = 'コンタクトフォーム：エラー';
             $this->template->content = View::forge('form/index');
             $this->template->content->set_safe('html_error', $val->show_errors());
+            $this->template->content->set_safe('html_form', $form->build('form/confirm'));
         }
     }
 
@@ -59,13 +72,16 @@ class Controller_Form extends Controller_Public
             throw new HttpInvalidInputException('ページ遷移が正しくありません');
         }
 
-        $val = $this->forge_validation()->add_callable('MyValidationRules');
+        $form = $this->forge_form();
+        $val  = $form->validation()->add_callable('MyValidationRules');
 
         if ( ! $val->run())
         {
+            $form->repopulate();
             $this->template->title = 'コンタクトフォーム：エラー';
             $this->template->content = View::forge('form/index');
-            $this->template->content->set_sage('html_error', $val->show_errors());
+            $this->template->content->set_safe('html_error', $val->show_errors());
+            $this->template->content->set_safe('html_form', $form->build('form/confirm'));
             return;
         }
 
@@ -95,9 +111,11 @@ class Controller_Form extends Controller_Public
             $html_error = '<p>メールを送信できませんでした。</p>';
         }
 
+        $form->repopulate();
         $this->template->title = 'コンタクトフォーム：送信エラー';
         $this->template->content = View::forge('form/index');
         $this->template->content->set_safe('html_error', $html_error);
+        $this->template->content->set_safe('html_form', $form->build('form/confirm'));
     }
 
     public function build_mail($post)
