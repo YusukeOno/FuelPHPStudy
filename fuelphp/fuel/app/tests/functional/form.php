@@ -185,4 +185,17 @@ class Test_Functional_Form extends FunctionalTestCase
         $pattern = '/' . preg_quote(static::$post['comment'], '/') . '/u';
         $this->assertRegExp($pattern, $test);
     }
+
+    public function test_送信ボタンを押すと送信完了()
+    {
+        $form = static::$crawler->selectButton('form_submit2')->form();
+        static::$crawler = static::$client->submit($form);
+
+        $test = 'コンタクトフォーム：送信完了';
+        $this->assertEquals($test, static::$crawler->filter('title')->text());
+
+        $test = static::$crawler->filter('p')->text();
+        $expected = '送信完了しました。';
+        $this->assertEquals($expected, $test);
+    }
 }
