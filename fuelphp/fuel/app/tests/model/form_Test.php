@@ -16,9 +16,14 @@ class model_form_Test extends DbTestCase
     {
         foreach ($this->form_fixt as $row)
         {
-            $test = $form->$field;
-            $expected = $row[$field];
-            $this->assertEquals($expected, $test);
+            $form = Model_Form::find_one_by_id($row['id']);
+
+            foreach ($row as $field => $value)
+            {
+                $test = $form->$field;
+                $expected = $row[$field];
+                $this->assertEquals($expected, $test);
+            }
         }
     }
 
@@ -35,7 +40,7 @@ class model_form_Test extends DbTestCase
         $form = Model_Form::forge()->set($data);
 
         // 新規データをデータベースに挿入
-        list($if, $rows) = $form->save();
+        list($id, $rows) = $form->save();
 
         // 挿入されたデータをデータベースから検索
         $form = Model_Form::find_by_pk($id);

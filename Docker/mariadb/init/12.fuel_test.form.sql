@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- テーブルの構造 `form`
 --
 
-use fuel_dev;
+use fuel_test;
 
 CREATE TABLE `form` (
   `id` int(11) UNSIGNED NOT NULL,
