@@ -11,7 +11,7 @@ RUN yum groupinstall -y 'Development tools' && \
         glibc-common \
         php \
         php-mbstring \
-        php-pgsql \
+        php-mysql \
         php-devel \
         php-pear \
         vim \

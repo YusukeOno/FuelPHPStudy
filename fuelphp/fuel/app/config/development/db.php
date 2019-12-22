@@ -22,9 +22,10 @@
 return array(
 	'default' => array(
 		'connection' => array(
-			'dsn'      => 'mysql:host=localhost;dbname=fuel_dev',
-			'username' => 'root',
-			'password' => 'root',
+			'dsn'      => 'mysql:host=db;dbname=fuel_dev;charset=utf8',
+			'username' => 'username',
+			'password' => 'password',
 		),
 	),
+	'profiling'	=> true,
 );
