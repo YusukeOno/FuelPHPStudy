@@ -9,6 +9,7 @@ return array(
         0 => '001_create_form',
         1 => '002_create_s',
         2 => '003_create_forms',
+        3 => '004_drop_form',
       ),
     ),
     'module' => 
