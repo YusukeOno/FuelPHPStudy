@@ -9,6 +9,8 @@ http://localhost/form
 ## 管理側フォーム
 http://localhost/admin
 
+ID:admin PW:password
+
 ## phpMyAdmin
 http://localhost:8080/
 
@@ -18,12 +20,13 @@ PHPコンテナ：CentOS 7.7.1908,Apache 2.4.6,PHP 5.4.16 with Xdebug v2.2.7
 DBコンテナ：mariadb-5.5.64-trusty
 ```
 
-## 管理ユーザー投入
+## 初期設定
+
+PHPコンテナにAttach Shellして、以下のコマンドを発行します。
+
 ```
 cd /app/fuelphp
-php oil console
-
->>> Auth::create_user('admin', 'password', 'admin@example.jp', 100);
+php composer.phar install
 ```
 
 ## ユニットテスト
