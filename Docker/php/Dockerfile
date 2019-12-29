@@ -1,5 +1,7 @@
 FROM centos:7
 
+LABEL maintainer "YusukeOno <y-ono@nswt.co.jp>"
+
 ENV PHP_VERSION 5.4.16
 ENV LANG ja_JP.UTF-8 \
     LANGUAGE="ja_JP:ja" \
