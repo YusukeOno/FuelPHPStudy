@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  php:
+  web:
     container_name: web-container
     build:
       context: ./docker/php/
