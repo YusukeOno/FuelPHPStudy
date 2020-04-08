@@ -20,14 +20,18 @@ PHPコンテナ：CentOS 7.7.1908,Apache 2.4.6,PHP 5.4.16 with Xdebug v2.2.7
 DBコンテナ：mariadb-5.5.64-trusty
 ```
 
-## 初期設定
-
-PHPコンテナにAttach Shellして、以下のコマンドを発行します。
+## 環境構築の手順
 
 ```
-cd /app/fuelphp
-php composer.phar install
+$ docker-compose up -d --build
 ```
+
+## `No Composer autoloader found. ***` とブラウザに表示された場合
+
+```
+$ docker-compose run --rm web-container php composer.phar install
+```
+
 
 ## ユニットテスト
 ```
