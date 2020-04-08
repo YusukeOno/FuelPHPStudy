@@ -35,9 +35,9 @@ $ docker-compose run --rm web-container php composer.phar install
 
 ## ユニットテスト
 ```
-cd /app/fuelphp
-php oil test --group=App
-php oil test --group=Functional
+$ docker exec -it web-container /bin/bash
+$ php oil test --group=App
+$ php oil test --group=Functional
 ```
 
 ## 素晴らしい本
