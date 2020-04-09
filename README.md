@@ -1,5 +1,5 @@
 # FuelPHPStudy
-Studying is fun for me. FuelPHP
+Studying is fun for me. FuelPHP Version: 1.8.2
 
 「はじめてのフレームワークとしてのFuelPHP第2版(3) 実践」をDocker環境で構築してみました。
 
