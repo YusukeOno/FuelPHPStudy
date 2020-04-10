@@ -29,6 +29,7 @@ $ docker-compose up -d --build
 ## `No Composer autoloader found. ***` とブラウザに表示された場合
 
 ```
+$ docker-compose down
 $ docker-compose run --rm web php composer.phar install
 ```
 
