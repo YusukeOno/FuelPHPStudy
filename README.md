@@ -4,10 +4,10 @@ Studying is fun for me. FuelPHP Version: 1.8.2
 「はじめてのフレームワークとしてのFuelPHP第2版(3) 実践」をDocker環境で構築してみました。
 
 ## 公開側フォーム
-http://localhost/form
+https://localhost/form
 
 ## 管理側フォーム
-http://localhost/admin
+https://localhost/admin
 
 ID:admin PW:password
 
@@ -18,6 +18,8 @@ http://localhost:8080/
 ```
 PHPコンテナ：CentOS 7.7.1908,Apache 2.4.6,PHP 5.4.16 with Xdebug v2.2.7
 DBコンテナ：mariadb-5.5.64-trusty
+phpMyAdminコンテナ：phpmyadmin/phpmyadmin
+HTTPSエンドポイントコンテナ：steveltn/https-portal:1
 ```
 
 ## 環境構築の手順
