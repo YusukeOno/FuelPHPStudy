@@ -16,10 +16,10 @@ http://localhost:8080/
 
 ## Dockerコンテナ構成
 ```
+HTTPSエンドポイントコンテナ：steveltn/https-portal:1
 Webコンテナ：CentOS 7.7.1908,Apache 2.4.6,PHP 5.4.16 with Xdebug v2.2.7
 DBコンテナ：mariadb-5.5.64-trusty
 phpMyAdminコンテナ：phpmyadmin/phpmyadmin
-HTTPSエンドポイントコンテナ：steveltn/https-portal:1
 ```
 
 ![Dockerコンテナ構成](https://raw.githubusercontent.com/YusukeOno/img/master/FuelPHPStudy/containers.png)
