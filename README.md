@@ -4,9 +4,13 @@ Studying is fun for me. FuelPHP Version: 1.8.2
 「はじめてのフレームワークとしてのFuelPHP第2版(3) 実践」をDocker環境で構築してみました。
 
 ## 公開側フォーム
+http://localhost/form
+or
 https://localhost/form
 
 ## 管理側フォーム
+http://localhost/admin
+or
 https://localhost/admin
 
 ID:admin PW:password
