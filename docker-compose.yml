@@ -1,14 +1,6 @@
 version: "3"
 
 services:
-  https-portal:
-    image: steveltn/https-portal:1
-    container_name: https-container
-    ports:
-      - '443:443'
-    environment:
-      DOMAINS: 'localhost -> http://web-container:80'
-      STAGE: local
   web:
     container_name: web-container
     build:
