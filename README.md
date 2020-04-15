@@ -16,7 +16,7 @@ http://localhost:8080/
 
 ## Dockerコンテナ構成
 ```
-HTTPSエンドポイントコンテナ：steveltn/https-portal:1
+HTTPSエンドポイントコンテナ（ローカルホストのみ有効）：steveltn/https-portal:1
 Webコンテナ：CentOS 7.7.1908,Apache 2.4.6,PHP 5.4.16 with Xdebug v2.2.7
 DBコンテナ：mariadb-5.5.64-trusty
 phpMyAdminコンテナ：phpmyadmin/phpmyadmin
@@ -28,6 +28,12 @@ phpMyAdminコンテナ：phpmyadmin/phpmyadmin
 
 ```
 $ docker-compose up -d --build
+```
+
+## ローカルホストでHTTPSを有効にする手順
+
+```
+$ docker-compose up -f docker-compose.yml -f docker-compose.local-https-portal.yml -d --build
 ```
 
 ## `No Composer autoloader found. ***` とブラウザに表示された場合
