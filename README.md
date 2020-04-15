@@ -37,7 +37,7 @@ $ docker-compose up -d --build
 ## HTTPSを有効にする場合 (localhost ONLY.)
 
 ```
-$ docker-compose up -f docker-compose.yml -f docker-compose.local-https-portal.yml -d --build
+$ docker-compose -f docker-compose.yml -f docker-compose.local-https-portal.yml up -d --build
 ```
 
 ## `No Composer autoloader found. ***` とブラウザに表示された場合
