@@ -30,7 +30,7 @@ phpMyAdminコンテナ：phpmyadmin/phpmyadmin
 $ docker-compose up -d --build
 ```
 
-## ローカルホストでHTTPSを有効にする手順
+## HTTPSを有効にする場合 (localhost ONLY.)
 
 ```
 $ docker-compose up -f docker-compose.yml -f docker-compose.local-https-portal.yml -d --build
