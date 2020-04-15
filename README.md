@@ -31,7 +31,7 @@ phpMyAdminコンテナ：phpmyadmin/phpmyadmin
 ## 環境構築の手順
 
 ```
-$ docker-compose up -d --build
+$ docker-compose -f docker-compose.yml up -d --build
 ```
 
 ## HTTPSを有効にする場合 (localhost ONLY.)
