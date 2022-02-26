@@ -1,7 +1,7 @@
 <?php
 return array(
     // メンテナンスモードフラグ
-    'active' => true,
+    'active' => false,
     // メンテナンス画面をスルーする URL パス
     'through_path_list' => array(
         'admin',
