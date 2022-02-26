@@ -7,5 +7,5 @@ services:
     ports:
       - '443:443'
     environment:
-      DOMAINS: 'localhost -> http://web-container:80'
+      DOMAINS: 'localhost -> http://web:80'
       STAGE: local
