@@ -22,14 +22,14 @@ services:
     ports:
       - 80:80
   db:
-    image: mariadb:5.5.64-trusty
+    image: mariadb:10.2
     container_name: db-container
     environment:
       - MYSQL_ROOT_PASSWORD=password
     volumes:
       - ./Docker/mariadb/init:/docker-entrypoint-initdb.d
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin
     container_name: pma-container
     environment:
       - PMA_ARBITRARY=1
